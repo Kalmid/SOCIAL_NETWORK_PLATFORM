@@ -7,8 +7,8 @@ const UserSchema = new mongoose.Schema({
   profilePic: String,
   bio: String,
   privacySettings: {
-    profileVisibility: String,
-    postVisibility: String,
+    profileVisibility: { type: String, default: 'public' },
+    postVisibility: { type: String, default: 'public' },
   },
   friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   friendRequests: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
