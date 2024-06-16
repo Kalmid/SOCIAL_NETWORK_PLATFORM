@@ -1,4 +1,4 @@
-// backend/routes/posts.js
+
 const express = require('express');
 const Post = require('../models/Post');
 const router = express.Router();
