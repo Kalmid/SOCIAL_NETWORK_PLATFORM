@@ -18,4 +18,14 @@ router.get('/', async (req, res) => {
   res.send(posts);
 });
 
+// Define a route to get posts
+router.get('/api/posts', (req, res) => {
+  // Fetch posts from the database or any data source
+  const posts = [
+    { id: 1, content: 'First post' },
+    { id: 2, content: 'Second post' },
+  ];
+  res.json(posts);
+});
+
 module.exports = router;
