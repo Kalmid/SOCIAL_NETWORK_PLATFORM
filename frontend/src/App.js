@@ -4,7 +4,7 @@ import { fetchPosts } from './actions/postActions';
 import io from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:5000');
+const socket = io(process.env.REACT_APP_API_URL);
 
 
 

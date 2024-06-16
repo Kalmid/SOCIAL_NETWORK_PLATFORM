@@ -1,4 +1,4 @@
-// backend/server.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
@@ -7,7 +7,13 @@ const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = require('socket.io')(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"]
+  }
+});
+
 
 app.use(cors());
 app.use(express.json());
